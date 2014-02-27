@@ -14,9 +14,6 @@ class ReadsWritesSpec extends Specification {
     val resultViaApplicative = Node.readsWithApplicative.reads(json)
     val resultViaFlatMap = Node.readsWithFlatMap.reads(json)
 
-    println(Json.prettyPrint(json))
-    println(s"via applicative:\n$resultViaApplicative")
-    println(s"via flatMap:\n$resultViaFlatMap")
     resultViaApplicative ==== resultViaFlatMap
   }
 
